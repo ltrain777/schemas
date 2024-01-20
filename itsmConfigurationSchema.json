@@ -1,0 +1,128 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://github.com/ltrain777/itsmConfigurationSchema.json#",
+    "title": "MySchema",
+    "type": "object",
+    "properties": {
+        "tables": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "name of glide record table"
+                    },
+                    "ticketTable": {
+                        "type": "boolean",
+                        "description": "table is a ticket table"
+                    },
+                    "fields": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "type": {
+                                    "type": "string"
+                                },
+                                "readOnly": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "name",
+                                "type"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "minItems": 1,
+                        "description": "fields on the table to use for the connection"
+                    }
+                },
+                "required": [
+                    "name",
+                    "fields"
+                ],
+                "additionalProperties": false,
+                "description": "tables and fields to use for the connection"
+            },
+            "minItems": 1,
+            "description": "tables and fields to use for the connection"
+        },
+        "allowedCompanies": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "name of company"
+                    },
+                    "sys_id": {
+                        "type": "string",
+                        "description": "sys_id of company"
+                    }
+                },
+                "required": [
+                    "name",
+                    "sys_id"
+                ],
+                "additionalProperties": false
+            },
+            "minItems": 1,
+            "description": "companies allowed to use the connection"
+        },
+        "assignmentGroups": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "name of group"
+                    },
+                    "sys_id": {
+                        "type": "string",
+                        "description": "sys_id of group"
+                    }
+                },
+                "required": [
+                    "name",
+                    "sys_id"
+                ],
+                "additionalProperties": false
+            },
+            "description": "companies allowed to use the connection"
+        },
+        "referenceRecords": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "display value of record"
+                    },
+                    "sys_id": {
+                        "type": "string",
+                        "description": "sys_id of record"
+                    }
+                },
+                "required": [
+                    "name",
+                    "sys_id"
+                ],
+                "additionalProperties": false
+            },
+            "description": "Reference records to use for the connection to display in the UI"
+        }
+    },
+    "required": [
+        "tables",
+        "allowedCompanies"
+    ],
+    "additionalProperties": false
+}
