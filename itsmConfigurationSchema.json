@@ -30,6 +30,9 @@
                                 },
                                 "readOnly": {
                                     "type": "boolean"
+                                },
+                                "mandatory": {
+                                    "type": "boolean"
                                 }
                             },
                             "required": [
