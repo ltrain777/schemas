@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://github.com/ltrain777/itsmConfigurationSchema.json#",
-    "title": "MySchema",
+    "title": "AMPx",
     "type": "object",
     "properties": {
         "tables": {
@@ -75,8 +75,7 @@
                 ],
                 "additionalProperties": false
             },
-            "minItems": 1,
-            "description": "companies allowed to use the connection"
+            "description": "companies allowed for ticket assignment"
         },
         "assignmentGroups": {
             "type": "array",
@@ -98,7 +97,7 @@
                 ],
                 "additionalProperties": false
             },
-            "description": "companies allowed to use the connection"
+            "description": "groups for ticket assignment"
         },
         "referenceRecords": {
             "type": "array",
@@ -124,8 +123,7 @@
         }
     },
     "required": [
-        "tables",
-        "allowedCompanies"
+        "tables"
     ],
     "additionalProperties": false
 }
