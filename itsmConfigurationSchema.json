@@ -67,6 +67,10 @@
                     "sys_id": {
                         "type": "string",
                         "description": "sys_id of company"
+                    },
+                    "default": {
+                        "type": "boolean",
+                        "description": "default company for ticket assignment"
                     }
                 },
                 "required": [
@@ -89,6 +93,10 @@
                     "sys_id": {
                         "type": "string",
                         "description": "sys_id of group"
+                    },
+                    "default": {
+                        "type": "boolean",
+                        "description": "default assignment group for tickets"
                     }
                 },
                 "required": [
@@ -123,7 +131,8 @@
         }
     },
     "required": [
-        "tables"
+        "tables",
+        "allowedCompanies"
     ],
     "additionalProperties": false
 }
